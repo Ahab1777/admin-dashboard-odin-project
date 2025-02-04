@@ -8,6 +8,11 @@
     --raisin-black-strong: #201a23;
 }
 
+
+.mega-button {
+    font-size: 60px;
+}
+
 /* font - Funnel Display */
 /* 
 .funnel-display-400 {
@@ -126,7 +131,7 @@ svg {
     grid-row: 1 / 2;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, minmax(100px, 130px));
+    grid-template-rows: repeat(2, 50%);
 }
 
 .search-bar {
@@ -155,26 +160,58 @@ svg {
 }
 
 
-.user-avatar {
+.user-avatar-container {
     grid-area: 1 / 4 / 2 / 6;
     display: grid;
-    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.user-avatar-container > svg {
+    height: 25px;
+    width: 25px;
+    justify-self: end;
+    align-self: center;
+    margin-right: 20px;
+    grid-column: 1 / 4;
+}
+
+.user-avatar {
+    align-self: center;
+    justify-self: first baseline;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    grid-column: 4 / 5;
 }
 
 .user-welcome-card {
     grid-area: 2 / 1 / 3 / 3;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    margin-left: 20px;
+}
+
+.user-welcome-card > * {
+    font-family: "Funnel Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.hi-there {
+    display: flex;
+    align-items: end;
 }
 
 .new-upload-share {
     grid-area: 2 / 3 / 3 / 6;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px;
-    jus
+    align-content: center;
 }
 
 .new-upload-share > button {
-    background-color: var(--raisin-black-light);
+    background-color: var(--raisin-black-strong);
     width: auto;
     height: 35px;
     min-width: 90px;
@@ -207,13 +244,18 @@ svg {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     display: grid;
-    grid-template-columns: auto 200px;
+    /* grid-template-columns: auto 200px; */
 }
 
 .body-title {
-    margin-left: 20px;
+    margin-left: 30px;
     margin-top: auto;
     align-self: baseline;
+    font-family: "Funnel Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--white);
 }
 
 /* set grid to all Body's childs */
@@ -224,7 +266,7 @@ svg {
 
 .projects {
     grid-area: 1 / 1 / 3 / 2;
-    background-color:rgb(239, 220, 7);
+    background-color: var(--midnight-gree);
 }
 
 .projects-main-container {
@@ -233,17 +275,59 @@ svg {
     gap: 4px;
     padding: 20px;
     border: 1px solid grey;
-    background-color: skyblue;
+    background-color: var(--midnight-gree);
     grid-template-rows: repeat(auto-fill, minmax(1fr, 150px));
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     justify-content: space-around;
+    border: none;
 }
+
 .card {
     background-color: var(--steel-blue);
     border-radius: 10px;
     min-height: 130px;
     max-height: 180px;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    border-left: 4px solid var(--raisin-black-strong);
+
+}
+
+.project-title {
+    font-family: "Funnel Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 8px;
+    color: var(--raisin-black-strong);
+    font-size: 14px;
+}
+
+.project-content {
+    font-family: "Funnel Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 6px;
+    color: var(--raisin-black-strong);
+
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 100%;
+    white-space: wrap;
+    /* display: block; */
+    /* max-width: 100%; */
+
+    
+}
+
+.project-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px;
+    gap: 10px;
 }
 
 .announcements {
